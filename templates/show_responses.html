@@ -1,0 +1,12 @@
+<!doctype html>
+<title>DFA Charged Questions</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>Responses</h1>
+  <ul>
+    {% for resp in responses %}
+      <li>Name: {{ resp.name }}, Text: {{ resp.text }}, Time: {{ resp.time }}</li>
+    {% endfor %}
+  </ul>
+  {% block body %}{% endblock %}
+</div>

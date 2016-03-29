@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, session, g, redirect, url_for, abort, flash
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -17,8 +17,10 @@ gc = gspread.authorize(credentials)
 def hello_world():
     sh = gc.open("Charged Question Responses")
     worksheet = sh.get_worksheet(0)
-    val = worksheet.acell('A1').value
-    return val
+    responses = worksheet.get_all_values()
+    responses = responses[1:]
+    responses = [dict(time=row[0], text=row[1], name=row[2]) for row in responses]
+    return render_template('show_responses.html', responses=responses)
 
 if __name__ == '__main__':
     app.run()
