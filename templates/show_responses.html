@@ -1,12 +1,49 @@
 <!doctype html>
 <title>DFA Charged Questions</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<div class=page>
-  <h1>Responses</h1>
+<script type="text/javascript" src="scroll.js"></script>
+<div class=responses>
   <ul>
     {% for resp in responses %}
-      <li>Name: {{ resp.name }}, Text: {{ resp.text }}, Time: {{ resp.time }}</li>
+      <div class=response_block>
+        <!--<li>Name: {{ resp.name }}</li>
+        <li>Text: {{ resp.text }}</li> 
+        <li>Time: {{ resp.time }}</li>!-->
+        <li>{{ resp.text }}</li> 
+      <div>  
     {% endfor %}
   </ul>
   {% block body %}{% endblock %}
+</div>
+
+<!--INDEX !-->
+
+<div class="posts">
+  <div class="post">
+    <h1 class="post-title">
+    </h1>
+  </div>
+</div>
+
+<!--sidebar !-->
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+          What fundamental assumption about the world do you think is wrong?
+      </h1>
+      <div align ="right">
+        <svg class="divider_rect" width="250" height="80">
+  	      <rect width="250" height="13" style="fill:rgb(255,255,255);" />
+	    </svg>
+	  </div> 
+      <p class="lead">Submit a response below to join the conversation!</p>
+      <div class="resp-button">
+	    <a href ="http://goo.gl/forms/w3whaOdRps" class="button">Add a response!</a>
+	  </div>
+	  <div class="DFA">
+	    <p>DFA x Coffeehouse </p>
+	  </div> 
+    </div>
+  </div>
 </div>
