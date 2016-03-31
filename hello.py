@@ -20,7 +20,12 @@ def hello_world():
     responses = worksheet.get_all_values()
     responses = responses[1:]
     responses = [dict(time=row[0], text=row[1], name=row[2]) for row in responses]
+    responses = responses[::-1]
     return render_template('show_responses.html', responses=responses)
+
+@app.route('/form')
+def show_form():
+    return render_template('form.html')
 
 if __name__ == '__main__':
     app.run()

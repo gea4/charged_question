@@ -1,22 +1,41 @@
 <!doctype html>
 <title>DFA Charged Questions</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<script type="text/javascript" src="scroll.js"></script>
+
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+	<script type="text/javascript" src="{{ url_for('static', filename='test.js') }}"></script>
+</head>
+<!--<link rel=javascript type=text/js href="{{url_for('static', filename='scroll.js') }}">-->
+<!--<script type="text/javascript" src="scroll.js"></script> -->
+<!--
 <div class=responses>
   <ul>
     {% for resp in responses %}
       <div class=response_block>
-        <!--<li>Name: {{ resp.name }}</li>
+        <li>Name: {{ resp.name }}</li>
         <li>Text: {{ resp.text }}</li> 
-        <li>Time: {{ resp.time }}</li>!-->
+        <li>Time: {{ resp.time }}</li>
         <li>{{ resp.text }}</li> 
       <div>  
     {% endfor %}
   </ul>
   {% block body %}{% endblock %}
 </div>
+-->
+<body onLoad="pageScroll()">
+<div class =responses>
+  {% for resp in responses %}
+    <p class="response_text">{{ resp.text }}</p>
+    <svg class="divider_rect" width="350" height="80">
+  	  <rect width="350" height="13" style="fill:black;" />
+	</svg>
+  {% endfor %}
+</div>
 
-<!--INDEX !-->
+<!--INDEX -->
 
 <div class="posts">
   <div class="post">
@@ -37,9 +56,9 @@
   	      <rect width="250" height="13" style="fill:rgb(255,255,255);" />
 	    </svg>
 	  </div> 
-      <p class="lead">Submit a response below to join the conversation!</p>
+      <p class="lead">Go to the link below on you phone or laptop to join the conversation!</p>
       <div class="resp-button">
-	    <a href ="http://goo.gl/forms/w3whaOdRps" class="button">Add a response!</a>
+	    <a href ="#" class="button">goo.gl/forms/g9RyXS0Yti</a>
 	  </div>
 	  <div class="DFA">
 	    <p>DFA x Coffeehouse </p>

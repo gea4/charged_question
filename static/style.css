@@ -653,8 +653,10 @@ a.sidebar-nav-item:focus {
 
 /* Responses */
 .responses {
-  margin-left: 22rem;
+  margin-left: 25rem;
   margin-top: 4rem;
+  font-family: "Abril Fatface";
+  color: black;
 }
 
 /* Response Button */
@@ -676,6 +678,11 @@ a.sidebar-nav-item:focus {
 /* Response Text Block */
 .responses_block {
   margin-bottom: 1rem;
+  
+}
+
+.response_text {
+  margin-right: 3.5rem;
 }
 
 .DFA {
